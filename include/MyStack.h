@@ -23,11 +23,11 @@ class MyStack {
     }
     point = ST.point;
   }
-  ~MyStack() { 
-      delete[] st_value; 
+  ~MyStack() {
+      delete[] st_value;
   }
-  T& get() { 
-      return st_value[point - 1]; 
+  T& get() {
+      return st_value[point - 1];
   }
   int getSize() { return size; }
   T& pop() {
