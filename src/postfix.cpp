@@ -18,15 +18,15 @@ int def_priority(char symb) {
   }
 }
 
-std::string infix2prefix(std::string infix) {
+std::string infix2postfix(std::string infix) {
   MyStack<char> operand(infix.size());
-  std::string prefix = "";
+  std::string postfix = "";
   for (char s : infix) {
     if (def_priority(s) == 5) {
-      prefix += s;
+      postfix += s;
     } else if (s == ')') {
       while ((!operand.isEmpty()) && (operand.get() != '(')) {
-        prefix += operand.pop();
+        postfix += operand.pop();
       }
       operand.pop();
     } else if (((operand.isEmpty()) && (def_priority(s) != 9)) || (s == '(')) {
@@ -39,13 +39,13 @@ std::string infix2prefix(std::string infix) {
       } else {
         while (def_priority(operand.get()) >= def_priority(s)) {
           if (operand.isEmpty()) break;
-          prefix += operand.pop();
+          postfix += operand.pop();
         }
         operand.push(s);
       }
     }
   }
-  while (!operand.isEmpty()) prefix += operand.pop();
-  return prefix;
+  while (!operand.isEmpty()) postfix += operand.pop();
+  return postfix;
 }
 

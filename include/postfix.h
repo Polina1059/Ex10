@@ -3,6 +3,6 @@
 #define INCLUDE_POSTFIX_H_
 #include <string>
 
-std::string infix2prefix(std::string infix);
+std::string infix2postfix(std::string infix);
 
 #endif  // INCLUDE_POSTFIX_H_
