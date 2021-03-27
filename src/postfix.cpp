@@ -1,7 +1,4 @@
-// Copyright 2020 A.SHT
-#include "MyStack.h"
+// Copyright 2021 PolinaPanina
 #include "postfix.h"
+#include "MyStack.h"
 
-std::string infix2postfix(std::string infix) {
-  return infix;
-}

@@ -1,9 +1,10 @@
-// Copyright 2020 A.SHT
+// Copyright 2021 PolinaPanina
 #include <iostream>
-#include <string>
-
 #include "postfix.h"
+#include "MyStack.h"
 
 int main() {
-  return 0;
+  std::string s1("2 + 6 * 3 / (4 - 2)");
+  std::string s2 = infix2prefix(s1);
+  std::cout << s2;  
 }
