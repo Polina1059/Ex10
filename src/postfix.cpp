@@ -6,12 +6,12 @@ int def_priority(char symb) {
   if ((symb == '*') || (symb == '/')) {
       return 3;
   } else if ((symb == '-') || (symb == '+')) {
-      return 2; 
+      return 2;
   } else if (symb == '(') {
       return 0;
   } else if (symb == ')') {
       return 1;
-  } else if ( (symb == '.')|| ((symb <= '9') && (symb >= '0'))) { 
+  } else if ((symb == '.') || ((symb <= '9') && (symb >= '0'))) {
       return 5;
   } else {
       return 9;
