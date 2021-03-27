@@ -23,10 +23,10 @@ std::string infix2postfix(std::string infix) {
   std::string postfix = "";
   for (char s : infix) {
     if (def_priority(s) == 5) {
-      postfix += s;
+      postfix = postfix + s + ' ';
     } else if (s == ')') {
       while ((!operand.isEmpty()) && (operand.get() != '(')) {
-        postfix += operand.pop();
+        postfix = postfix + operand.pop() + ' ';
       }
       operand.pop();
     } else if (((operand.isEmpty()) && (def_priority(s) != 9)) || (s == '(')) {
@@ -39,13 +39,13 @@ std::string infix2postfix(std::string infix) {
       } else {
         while (def_priority(operand.get()) >= def_priority(s)) {
           if (operand.isEmpty()) break;
-          postfix += operand.pop();
+          postfix = postfix + operand.pop() + ' ';
         }
         operand.push(s);
       }
     }
   }
-  while (!operand.isEmpty()) postfix += operand.pop();
+  while (!operand.isEmpty()) postfix = postfix + operand.pop() + ' ';
   return postfix;
 }
 
